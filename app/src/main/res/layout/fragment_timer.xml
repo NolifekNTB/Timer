@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotificationFragment">
+    tools:context=".TimerFragment">
+
 
     <TextView
-        android:id="@+id/NotificationFragment"
+        android:id="@+id/TimerFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Notification"
+        android:text="Timer"
         android:gravity="center"
         android:textSize="35sp"/>
 

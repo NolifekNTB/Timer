@@ -3,21 +3,18 @@ package com.example.myapplication1
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import com.example.myapplication1.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Timer
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
 
-    var homeFragment = HomeFragment()
-    var notificationFragment = NotificationFragment()
-    var settingsFragment = SettingsFragment()
+    var TimerFragment = TimerFragment()
+    var AlarmClockFragment = AlarmClockFragment()
+    var TimePieceFragment = TimePieceFragment()
+    var WorldTimeFragment = WorldTimeFragment()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +23,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //refreshTime()
 
-        setCurrentFragment(homeFragment)
+        setCurrentFragment(TimerFragment)
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.home -> setCurrentFragment(homeFragment)
-                R.id.notification -> setCurrentFragment(notificationFragment)
-                R.id.settings -> setCurrentFragment(settingsFragment)
+                R.id.Timer -> setCurrentFragment(TimerFragment)
+                R.id.Timepiece -> setCurrentFragment(TimePieceFragment)
+                R.id.AlarmClock -> setCurrentFragment(AlarmClockFragment)
+                R.id.WorldTime -> setCurrentFragment(WorldTimeFragment)
             }
             true
         }
