@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.myapplication1.databinding.ActivityMainBinding
-import java.util.Timer
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //refreshTime()
 
         setCurrentFragment(TimerFragment)
 
@@ -52,13 +51,6 @@ class MainActivity : AppCompatActivity() {
         }
         thread.start()
     }
-
-    fun Timer() {
-        val simpleDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-        val currentDate = simpleDate.format(Date())
-        //binding.Text.text = "Current Date is: " + currentDate
-    }
-
      */
 
     fun setCurrentFragment(fragment: Fragment) {
