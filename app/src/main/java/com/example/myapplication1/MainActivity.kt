@@ -8,6 +8,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
+    //View only in this file, create variable without initialize, initialize to use in entire class
     private lateinit var binding: ActivityMainBinding
 
 
@@ -17,20 +18,28 @@ class MainActivity : AppCompatActivity() {
     var WorldTimeFragment = WorldTimeFragment()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Create view base on xml file, layoutInflate - create view based on activity
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //Start fragment
         setCurrentFragment(TimerFragment)
 
+        //Listener of select bottom navigation's items
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
+
+            //If clicked element (itemId) is id, set current fragment to that id
             when(it.itemId){
                 R.id.Timer -> setCurrentFragment(TimerFragment)
                 R.id.Timepiece -> setCurrentFragment(TimePieceFragment)
                 R.id.AlarmClock -> setCurrentFragment(AlarmClockFragment)
                 R.id.WorldTime -> setCurrentFragment(WorldTimeFragment)
             }
+            //Tu skończyłem
             true
         }
     }
