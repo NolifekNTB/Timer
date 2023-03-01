@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.AlarmClock -> setCurrentFragment(AlarmClockFragment)
                 R.id.WorldTime -> setCurrentFragment(WorldTimeFragment)
             }
-            //Tu skończyłem
+            //return type true (boolean) because setCurrentFragment (unit) is cannot be return
             true
         }
     }
@@ -63,9 +63,19 @@ class MainActivity : AppCompatActivity() {
      */
 
     fun setCurrentFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container, fragment)
-            commit()
-        }
+        //Same as - supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
+
+        //Responsible for performing actions on fragments
+        supportFragmentManager
+            //Start a series of transactions (each change) on Fragments
+            .beginTransaction()
+            //execute a block of code within the context of an object
+            .apply {
+                //Replace container (FrameLayout) to choose fragment
+                replace(R.id.container, fragment)
+                //Schedule a commit of transaction (work asynchronously)
+                commit()
+                //From API 24, I can use commitNow(), but shouldn't use with addBackStack()
+            }
     }
 }
