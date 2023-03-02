@@ -44,24 +44,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /*fun refreshTime() {
-        val thread: Thread = object : Thread() {
-            override fun run() {
-                try {
-                    while (!this.isInterrupted) {
-                        sleep(1000)
-                        runOnUiThread {
-                            Timer()
-                        }
-                    }
-                } catch (_: InterruptedException) {
-                }
-            }
-        }
-        thread.start()
-    }
-     */
-
     fun setCurrentFragment(fragment: Fragment) {
         //Same as - supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
 

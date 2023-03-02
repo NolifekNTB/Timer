@@ -28,6 +28,4 @@ class WorldTimeFragment : Fragment() {
             val currentDate = simpleDate.format(Date())
             binding.Text.text = "Current Date is: " + currentDate
         }
-    }
-
-//TODO - AutoRefresh
+}
