@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +12,28 @@
         android:layout_height="match_parent"
         android:text="Time Piece"
         android:gravity="center"
-        android:textSize="35sp"/>
+        android:textSize="35sp" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/Start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:textSize="35sp"
+        android:layout_gravity="bottom"
+        android:layout_alignBottom="@id/Timepiece"
+        android:layout_alignRight="@id/Timepiece"
+        android:layout_marginBottom="200sp"
+        android:layout_marginRight="50sp"/>
+
+    <Button
+        android:id="@+id/Stop_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:textSize="35sp"
+        android:layout_alignBottom="@id/Timepiece"
+        android:layout_marginBottom="200sp"
+        android:layout_marginLeft="50sp"/>
+
+</RelativeLayout>
