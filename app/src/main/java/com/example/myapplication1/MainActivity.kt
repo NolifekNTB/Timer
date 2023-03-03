@@ -17,8 +17,6 @@ class MainActivity : AppCompatActivity() {
     var TimePieceFragment = TimePieceFragment()
     var WorldTimeFragment = WorldTimeFragment()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Create view base on xml file, layoutInflate - create view based on activity
