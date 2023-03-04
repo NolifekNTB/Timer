@@ -49,4 +49,9 @@ class TimePieceFragment : Fragment() {
             handler.removeCallbacks(stopWatchRunnable)
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

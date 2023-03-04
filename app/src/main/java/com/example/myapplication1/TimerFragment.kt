@@ -2,10 +2,12 @@ package com.example.myapplication1
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import com.example.myapplication1.databinding.FragmentTimerBinding
 
 
@@ -24,8 +26,6 @@ class TimerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
 
         val timer = object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
@@ -48,4 +48,11 @@ class TimerFragment : Fragment() {
             timer.cancel()
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+
 }
